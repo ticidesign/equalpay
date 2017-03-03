@@ -1,0 +1,56 @@
+---
+# /*Only the main Sass file needs front matter (the dashes are enough)*/
+---
+
+@charset "utf-8";
+
+// Variables
+$base-font-family:  'Montserrat', sans-serif;
+$base-font-size:   20px;
+$base-line-height: 32px;
+$mobile-font-size: 16px;
+
+$text-color:       #424341;
+$background-light: #FFFFFF;
+$background-dark:  #f5f5f5;
+$brand-color:      #01edea;
+$dark:             #000000;
+$second-color:     #ed3c01;
+$copy-color:       #e9436d;
+
+
+$pinknav:          #fb8ba3;
+$aqua:             #9dffeb;
+$green:            #c1f1ab;
+$lightgreen:       #a2faba;
+$anothergreen:     #9efed3;
+$blue:             #a9ebf3;
+$lightblue:        #9dfaff;
+$yellow:           #f5ff9d;
+$purple:           #e39ff6;
+$anotherblue:      #b0e5dd;
+
+// Hamburger Menu settings
+$bar-width: 45px;
+$bar-height: 4px;
+$bar-spacing: 12px;
+
+// Width of the content area
+$on-mobile:       668px; 	
+$on-tablet:       768px; 			
+$on-desktop:      1200px;
+$on-full-desktop: 1240px; 
+
+$width-tablet: 	  768px;
+$width-desktop:   1200px;
+
+$images-location:  "{{ site.locations.images }}";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+    "base",
+    "animate",
+    "layout",
+    "header",
+    "footer"
+;

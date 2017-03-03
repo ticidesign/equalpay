@@ -1,0 +1,21 @@
+{% assign current = page.url | downcase | split: '/' %}
+<header>
+
+    <nav class="menu">   
+      <ul>
+        <li{% if page.id == "about" %} class="active"{% endif %}><a data-scroll href="/#problem">the problem</a></li>
+        <li{% if page.id == "work" %} class="active"{% endif %}><a data-scroll href="/#how">how to change</a></li>
+        <li><h3>EqualPay</h3></li>
+        <li{% if page.id == "people" %} class="active"{% endif %}><a data-scroll href="/#stickers">get stickers</a></li>
+        <!--<li{% if page.id == "culture" %} class="active"{% endif %}><a data-scroll href="/#support">show your support</a></li>-->
+        <li{% if page.id == "contact" %} class="active"{% endif %}><a data-scroll href="/#supporters">supporters</a></li>
+      </ul>     
+    </nav>		
+
+    <div class="mobile-menu">
+      <div class="bar"></div>	
+    </div>
+
+  </div>
+
+</header>

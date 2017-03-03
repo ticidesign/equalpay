@@ -1,0 +1,122 @@
+/* Reset some basic elements */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+  font-family: $base-font-family;
+  font-weight: 300;
+  font-size: $mobile-font-size;
+  line-height: $base-line-height;
+  color: $text-color;
+  background-color: $background-light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  transition: all 0.3s ease-in-out;
+  @media only screen and (min-width: $on-mobile) {
+    font-size: $base-font-size;
+  }  
+}
+
+img {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  color: $copy-color;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $base-font-family;
+  color: $copy-color;
+  line-height: 1.5em;
+  width: 100%;
+}
+
+h1 {
+  font-family: $base-font-family;
+  font-weight: 700;
+  font-size: 150px;
+  line-height: 150px;
+  span{
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+h2 {
+  font-family: $base-font-family;
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 100px;
+  span{
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+h3 {
+  font-size: 67px;
+  line-height: 67px;
+}
+h4 {
+  font-size: 42px;
+  line-height: 42px;
+}
+h5 {
+  font-size: 38px;
+  line-height: 38px;
+}
+p {
+  margin-bottom: 0.5em;
+}
+
+body.work p {
+  margin-bottom: 2em;
+}
+
+strong {
+  font-family: $base-font-family;
+  font-weight: 700;
+}
+
+ul {
+  padding: 0 4em;
+}
+
+figure {
+  position: relative;
+  display: block;
+  max-width: 100%;
+}
+
+figcaption {
+  text-align: center;
+    margin: 2em;
+  &.nomargin {
+    margin: 0;
+  }
+}

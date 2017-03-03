@@ -1,0 +1,259 @@
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  section {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    max-height: 1000px;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    background-color: $aqua;
+    .wrapper {
+      position: relative;
+      width: calc(100% - 2em);
+      max-width: $width-desktop;
+      text-align: left;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-content: center;
+      &.row {
+        flex-flow: row wrap;
+      }
+    }
+    .full {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: center;
+    }
+    .half {
+      position: relative;
+      width: 50%;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-content: center;
+      &.clock {
+        background: #e10c50;
+        // background: #e10c50 url($images-location+'clock.jpg') no-repeat center center;
+        // background-size: contain;      
+      }
+      &.tres{
+        width: 40%;
+      }
+      &.sete{
+        width: 60%;
+        img {
+          animation-delay: 1s;
+        }
+      }
+    }
+    
+    .textcenter {
+      text-align: center;
+    }
+    .textleft {
+      text-align: left;
+    }
+    .textright {
+      text-align: right;
+    }
+
+    .copy {
+      color: $copy-color;
+      small {
+        color: $text-color;
+      }
+      &.middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &.center {
+        position: absolute;
+        top: 50%;
+        transform: translateY( -50%);
+      }
+      &.right {
+        position: absolute;
+        right: 0;
+      }
+      &.top {
+        position: absolute;
+        top: 0;
+      }
+      &.left {
+        position: absolute;
+        left: 0;
+      }
+      &.bottom {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+    &.first {
+      height: 100vh;
+      max-height: 100vh;
+      h3 {
+        text-align: center;
+        margin-bottom: 1em;
+      }
+      /* sets arrow positioning */
+      .arrow {
+        width: 60px;
+        height: 82px;
+        position: absolute;
+        left: 50%;
+        margin-left: -30px;
+        bottom: 0;
+        transform: scale(0.5);
+        @media only screen and (min-width: $on-mobile) {
+          transform: scale(1);
+          bottom: 20px;
+        }
+      }
+      /* sets arrow style */
+      .arrow path {
+        stroke: white;
+        fill: transparent;
+        stroke-width: 3px;	
+        animation: arrow 2s infinite;
+      }
+      .arrow path.a1{
+        animation-delay:-1s;
+      }
+      .arrow path.a2{
+        animation-delay:-.5s;
+      }
+      .arrow path.a3{	
+        animation-delay:0s;
+      }
+    }
+
+    &.problem {
+      background: $green;
+      // background: $green url($images-location+'wallet.jpg') no-repeat center right;
+    } 
+    &.how {
+      background-color: $blue;
+    }
+    &.stickers{
+      background-color: $yellow;
+    }
+    &.money{
+      background: $yellow url($images-location+'bg_money.png') no-repeat center center;
+      background-size: cover;
+    }
+    &.graph{
+      background-color: $blue;
+      .wrapper {
+        background: $blue url($images-location+'graph.jpg') no-repeat bottom left;
+      }
+    }
+    &.lots{
+      background: $lightgreen;
+      .dollar {
+        position: absolute;
+        opacity: 0.4;
+        &.top {
+          top: 10%;
+          right: 0;
+        }
+        &.bottom {
+          bottom: 10%;
+          left: 0;
+        }
+      }
+    }
+    &.currency {
+      .pink {
+        position: relative;
+        background: $purple;
+        img{
+          position: absolute;
+          top: 0;
+          right: -15%;
+          animation-delay: 1s;
+        }
+      }
+    }
+    &.stickers {
+      padding: 5em 0;
+      background: $anothergreen;
+      .stickersimg {
+        margin: 3em auto;
+      }
+      a {
+        width: 150px;
+        height: auto;
+        text-align: center;
+        margin: 2em 0;
+        padding: 1em 0;
+        color: white;
+        background-color: $copy-color;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $copy-color;
+          background-color: white;
+        }
+      }
+    }
+    &.support {
+      background: $yellow;
+    }
+    &.supporters {
+      background: $anotherblue;
+      ul {
+        margin: 2em 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-content: center;
+        li {
+          margin-bottom: 1.2em;
+        }
+      }
+    }
+  }
+
+  .video_wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 0;
+    height: 0;
+    iframe,
+    object,
+    embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+
+/* ANIMATIONS */ 
+
+@keyframes arrow{
+  0% {opacity:0}
+  25% {opacity:1}
+  75% {opacity:0}
+  100% {opacity:0}
+}

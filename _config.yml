@@ -1,0 +1,35 @@
+# If you change this file, please restart the server process.
+
+# Global configuration
+exclude: [README.md, 'node_modules']
+
+# Site settings
+title: Equal Pay website
+email: ticiana.andrade@lidaaustralia.com.au
+description: Equal Pay website.
+keywords: Equal, Pay, website
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://equalpay.com.au" # the base hostname & protocol for your site
+
+# Build settings
+destination: public
+source: src
+port: 4242
+# markdown: kramdown
+# gems:
+#   - jekyll-feed
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+
+
+#Defaul locations
+locations:
+# Path to prefix in front of absolute links
+  pathPrefix: "/"
+# Location of all static images used in CSS and on staic pages
+  images: "/img/"
+# Location of CSS files
+  css: "/css/"
+# Location of JS files
+  js: "/js/"
