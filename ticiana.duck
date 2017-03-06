@@ -5,12 +5,12 @@
             <key>Hostname</key>
             <string>equalpay.com.au</string>
             <key>Nickname</key>
-            <string>ticiana@equalpay.com.au@equalpay.com.au </string>
+            <string>ticiana@equalpay.com.au </string>
             <key>Port</key>
             <string>21</string>
             <key>Protocol</key>
             <string>ftp</string>
             <key>Username</key>
-            <string>ticiana@equalpay.com.au@equalpay.com.au</string>
+            <string>ticiana@equalpay.com.au</string>
         </dict>
 </plist>
