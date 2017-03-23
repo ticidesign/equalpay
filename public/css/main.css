@@ -69,8 +69,12 @@ h2 {
     line-height: 30px; }
 
 h3 {
-  font-size: 67px;
-  line-height: 67px; }
+  font-size: 27px;
+  line-height: 27px; }
+  @media only screen and (min-width: 668px) {
+    h3 {
+      font-size: 67px;
+      line-height: 67px; } }
 
 h4 {
   font-size: 42px;
@@ -2326,7 +2330,7 @@ main {
   main section {
     position: relative;
     width: 100%;
-    height: 85vh;
+    height: calc(100vh - 100px);
     max-height: 1000px;
     padding: 0;
     display: flex;
@@ -2334,6 +2338,10 @@ main {
     justify-content: flex-start;
     align-content: flex-start;
     background-color: #9dffeb; }
+    @media only screen and (min-width: 668px) {
+      main section {
+        height: 85vh;
+        max-height: 1000px; } }
     main section .wrapper {
       position: relative;
       width: calc(100% - 2em);
@@ -2342,11 +2350,17 @@ main {
       margin: 0 auto;
       padding: 0;
       display: flex;
-      flex-flow: column wrap;
+      flex-flow: row wrap;
       justify-content: center;
       align-content: center; }
       main section .wrapper.row {
-        flex-flow: row wrap; }
+        flex-flow: column wrap; }
+        @media only screen and (min-width: 668px) {
+          main section .wrapper.row {
+            flex-flow: row wrap; } }
+      @media only screen and (min-width: 668px) {
+        main section .wrapper {
+          flex-flow: column wrap; } }
     main section .full {
       position: relative;
       width: 100%;
@@ -2364,11 +2378,17 @@ main {
       main section .half.clock {
         background: #e10c50; }
       main section .half.tres {
-        width: 40%; }
+        width: 100%; }
+        @media only screen and (min-width: 668px) {
+          main section .half.tres {
+            width: 40%; } }
       main section .half.sete {
-        width: 60%; }
-        main section .half.sete img {
-          animation-delay: 1s; }
+        width: 100%; }
+        @media only screen and (min-width: 668px) {
+          main section .half.sete {
+            width: 60%; }
+            main section .half.sete img {
+              animation-delay: 1s; } }
     main section .textcenter {
       text-align: center; }
     main section .textleft {
@@ -2534,6 +2554,9 @@ header {
   justify-content: center;
   flex: 0 0 auto; }
   header nav {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     max-width: 1200px;
     display: flex;
@@ -2541,26 +2564,52 @@ header {
     justify-content: center;
     align-items: center;
     transition: all 0.8s ease-in-out; }
+    @media only screen and (min-width: 668px) {
+      header nav {
+        position: relative; } }
     header nav ul {
       width: 100%;
-      height: 100px;
+      height: auto;
+      max-height: 70px;
+      background: #fb8ba3;
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: column wrap;
       justify-content: space-between;
       list-style: none;
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      transition: max-height 0.5s ease-in-out; }
+      @media only screen and (min-width: 668px) {
+        header nav ul {
+          flex-flow: row wrap;
+          height: 100px; } }
       header nav ul li {
-        width: calc(20% - 0.4em);
+        width: calc(100% - 0.4em);
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         margin: 0;
-        padding: 0 0.2em; }
+        padding: 0 0.2em;
+        order: 2; }
+        header nav ul li:nth-of-type(2) {
+          order: 1; }
+          @media only screen and (min-width: 668px) {
+            header nav ul li:nth-of-type(2) {
+              order: 2; } }
+        @media only screen and (min-width: 668px) {
+          header nav ul li {
+            width: calc(20% - 0.4em);
+            justify-content: center; } }
         header nav ul li h3 {
           color: white;
           font-size: 40px;
-          text-align: center; }
+          line-height: 40px;
+          text-align: left;
+          margin-left: 10px; }
+          @media only screen and (min-width: 668px) {
+            header nav ul li h3 {
+              text-align: center;
+              margin-left: 0; } }
         header nav ul li a {
           position: relative;
           padding: 0.5em;
@@ -2597,10 +2646,13 @@ header {
             height: 2px;
             background-color: white; }
   header .mobile-menu {
+    position: absolute;
+    top: 15px;
+    right: 25px;
     display: block;
     margin: auto 0;
-    width: 45px;
-    height: 28px;
+    width: 35px;
+    height: 23px;
     cursor: pointer;
     z-index: 99; }
     @media only screen and (min-width: 668px) {
@@ -2609,41 +2661,30 @@ header {
   header .bar,
   header .bar:after,
   header .bar:before {
-    width: 45px;
-    height: 4px; }
+    width: 35px;
+    height: 3px; }
   header .bar {
     position: relative;
-    transform: translateY(12px);
+    transform: translateY(10px);
     background: white;
     transition: all 0ms 300ms; }
   header .bar:before {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 12px;
+    bottom: 10px;
     background: white;
     transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1); }
   header .bar:after {
     content: "";
     position: absolute;
     left: 0;
-    top: 12px;
+    top: 10px;
     background: white;
     transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1); }
 
-header.open nav ul li {
-  transform: scale(1) translateY(0);
-  opacity: 1; }
-header.open nav.afteropen ul li:nth-of-type(1) {
-  transition-delay: 0.5s; }
-header.open nav.afteropen ul li:nth-of-type(2) {
-  transition-delay: 0.4s; }
-header.open nav.afteropen ul li:nth-of-type(3) {
-  transition-delay: 0.3s; }
-header.open nav.afteropen ul li:nth-of-type(4) {
-  transition-delay: 0.2s; }
-header.open nav.afteropen ul li:nth-of-type(5) {
-  transition-delay: 0.1s; }
+header.open nav ul {
+  max-height: 500px; }
 header.open .bar {
   background: transparent; }
 header.open .bar:after {

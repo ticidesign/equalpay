@@ -14,6 +14,9 @@ header {
   flex: 0 0 auto;
 
   nav {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     max-width: $width-desktop;
     display: flex;
@@ -21,26 +24,53 @@ header {
     justify-content: center;
     align-items: center;
     transition: all 0.8s ease-in-out;
+    @media only screen and (min-width: $on-mobile) {
+      position: relative;
+    }
     ul{
       width: 100%;
-      height: 100px;
+      height: auto;
+      max-height: 70px;
+      background: $pinknav;
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: column wrap;
       justify-content: space-between;
       list-style: none;
       margin: 0;
       padding: 0;
-      li{
-        width: calc(20% - 0.4em);
+      transition: max-height 0.5s ease-in-out;
+      @media only screen and (min-width: $on-mobile) {
+        flex-flow: row wrap;
+        height: 100px;
+      }
+      li {
+        width: calc(100% - 0.4em);
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         margin: 0;
         padding: 0 0.2em;
+        order: 2;
+        &:nth-of-type(2){
+          order: 1;
+          @media only screen and (min-width: $on-mobile) {
+            order: 2;
+          }
+        }
+        @media only screen and (min-width: $on-mobile) {
+          width: calc(20% - 0.4em);
+          justify-content: center;
+        }
         h3 {
           color: white;
           font-size: 40px;
-          text-align: center;
+          line-height: 40px;
+          text-align: left;
+          margin-left: 10px;
+          @media only screen and (min-width: $on-mobile) {
+            text-align: center;
+            margin-left: 0;
+          }
         }
         a {
           position: relative;
@@ -88,6 +118,9 @@ header {
   }
 
   .mobile-menu {
+    position: absolute;
+    top: 15px;
+    right: 25px;
     display: block;
     margin: auto 0;
     width: $bar-width;
@@ -135,22 +168,7 @@ header {
 header.open{
   nav {
     ul {
-      li {
-        transform: scale(1) translateY(0);
-        opacity: 1;          
-      }
-    }
-    &.afteropen{
-      ul {
-        li {
-          $timeout: (0.5s, 0.4s, 0.3s, 0.2s, 0.1s);
-          @for $i from 1 through length($timeout) {
-            &:nth-of-type(#{$i}) {
-                transition-delay: nth($timeout, $i);
-            }
-          }
-        }
-      }
+      max-height: 500px;
     }
   }
   .bar {
